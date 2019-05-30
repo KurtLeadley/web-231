@@ -26,10 +26,10 @@ for (var i = 0 ; i < teams.length ; i++) {
     if (team.startsWith('Rangers')) {
         var teamRangersSubStringS = team.substring(6,1);
     }
-}
-var newTeamString = teamLightningSubString + teamOilersSubString + teamRangersSubStringN + teamRangersSubStringS;
-newTeamStringLowerCase = newTeamString.toLowerCase();
-newTeamStringCorrectCase = newTeamStringLowerCase.charAt(0).toUpperCase(newTeamString) + newTeamStringLowerCase.slice(1);
+    var newTeamString = teamLightningSubString + teamOilersSubString + teamRangersSubStringN + teamRangersSubStringS;
+    newTeamStringLowerCase = newTeamString.toLowerCase();
+    newTeamStringCorrectCase = newTeamStringLowerCase.charAt(0).toUpperCase(newTeamString) + newTeamStringLowerCase.slice(1);
 
-var newTeamStringSentence = "The" + newTeamStringCorrectCase + " are the new team!" ;
-console.log(newTeamStringSentence);
+    var newTeamStringSentence = "The" + newTeamStringCorrectCase + " are the new team!" ;
+    console.log(newTeamStringSentence);
+}

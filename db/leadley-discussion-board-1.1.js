@@ -13,7 +13,7 @@
 var teams = ['Lightning', 'Oilers','Rangers'];
 
 for (var i = 0 ; i < teams.length ; i++) {
-    team = teams['firstArrayIntegerEYE'];
+    team = teams[i];
     if (team.startsWith('Lightning')) {
         var teamLightningSubString = team.substring(0,2);
     }
@@ -24,12 +24,12 @@ for (var i = 0 ; i < teams.length ; i++) {
         var teamRangersSubStringN = team.substring(2,3);
     }
     if (team.startsWith('Rangers')) {
-        var teamRangersSubStringS = team.substring(6,1);
+        var teamRangersSubStringS = team.substring(6);
     }
-    var newTeamString = teamLightningSubString + teamOilersSubString + teamRangersSubStringN + teamRangersSubStringS;
-    newTeamStringLowerCase = newTeamString.toLowerCase();
-    newTeamStringCorrectCase = newTeamStringLowerCase.charAt(0).toUpperCase(newTeamString) + newTeamStringLowerCase.slice(1);
-
-    var newTeamStringSentence = "The" + newTeamStringCorrectCase + " are the new team!" ;
-    console.log(newTeamStringSentence);
 }
+var newTeamString = teamLightningSubString + teamOilersSubString + teamRangersSubStringN + teamRangersSubStringS;
+newTeamStringLowerCase = newTeamString.toLowerCase();
+newTeamStringCorrectCase = newTeamStringLowerCase.charAt(0).toUpperCase() + newTeamStringLowerCase.slice(1);
+
+var newTeamStringSentence = "The " + newTeamStringCorrectCase + " are the new team!" ;
+console.log(newTeamStringSentence);

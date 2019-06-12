@@ -1,0 +1,102 @@
+<!--
+ Title: Discussion Board 3.1
+ Author: Yogi (freecodecamp.org)
+ Date: 11 June 2019
+ Modified By: April Auger
+ Description: This program demonstrates how to loop through a
+ table with a while loop and calculate the sum of all products.
+ But before it will run, you will need to correct three errors.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Discussion Board 3.1 - Find Mistakes</title>
+
+	<style>
+		#priceTable {
+			font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+		#priceTable td,
+		#priceTable th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+		#priceTable tr {
+			background-color: #f2f2f2;
+		}
+		#priceTable th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #4CAF50;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Table listing products and pricing -->
+	<table id="priceTable">
+		<tr>
+			<th>Id</th>
+			<th>Product Name</th>
+			<th>Product Price</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Shirts</td>
+			<td>49.99</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Pants</td>
+			<td>55.50</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Socks</td>
+			<td>20</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Shoes</td>
+			<td>99</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Jackets</td>
+			<td>88.90</td>
+		</tr>
+	</table>
+
+	<script>
+		// Get the element with the "priceTable" id
+		var table = document.getElementById("priceTable");
+		var i = 1;
+		var sum = 0;
+		// Loop through #priceTable to calculate the sum of all products
+		while (i < table.rows.length) {
+      sum += parseFloat(table.rows[i].cells[2].innerHTML);
+      i++;
+      console.log(sum);
+		}
+		// Insert a new row to output the total
+		var row = table.insertRow(i);
+		// Insert cells into the new row
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+		var cell3 = row.insertCell(2);
+		// Add the value "Total Price" to the second cell
+		cell2.innerHTML = "Total Price";
+		// Add the sum to the third cell
+		cell3.innerHTML = sum;
+    console.log("FINAL SUM = " + sum);
+		</script>
+</body>
+</html>

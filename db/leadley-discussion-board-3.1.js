@@ -13,7 +13,7 @@ var sportsTeamArray = ["Sharks","Raptors","Steelers","Chargers","Red Sox","Sun D
 // two empty arrays
 var sTeamsOnlyArray = [];
 var allOtherTeamsArray = [];
-// loop through the original array
+// loop through the original array. end the loop when i gets to the LENGTH of the array
 for ($i = 0; $i < count(sportsTeamArray); $i++) {
   var sportsTeam = sportsTeamArray[$i];
   // if the team starts with an S, add the S team to the S team array

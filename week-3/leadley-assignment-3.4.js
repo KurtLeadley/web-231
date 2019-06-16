@@ -42,9 +42,11 @@ function logMatch (argOne, argTwo) {
 function randomNumber() {
   return Math.floor((Math.random() * 10) + 1)
 }
-///////////////////////////
-// for loop statement
-///////////////////////////
+///////////////////////////////////
+// for loop statement and logs
+//////////////////////////////
+
+console.log("-- DO THE NUMBERS MATCH GAME -- \n");
 
 // create a for loop that starts at 0 and runs 10 times. Increment i each loop
 for(var i = 0; i < 10; i++) {

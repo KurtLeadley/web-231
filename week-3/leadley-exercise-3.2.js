@@ -42,9 +42,18 @@ function logMatch (valOne, valTwo) {
   console.log(valOne +" and " + valTwo + " do match!");
 }
 
-///////////////////////////////////////////////////////////
-// testing my match function for true and false
-///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+// logging to console, testing the variables and logging some more
+///////////////////////////////////////////////////////////////////////
+
+// pass in header.display arguments, spit them out.
+console.log(header.display("Kurt", "Leadley", "Assignement 3-2"));
+console.log("\n");
+console.log("// Output from the match{} function...")
+console.log(match("A","B"));
+console.log(match(2,2));
+console.log("\n");
+console.log("// output from the if...else blocks");
 
 // check the first two variables using an if-else tes
 if (match(testVar1,testVar2)) {
@@ -66,16 +75,3 @@ if (match(testVar5,testVar6)) {
 } else {
   logMismatch(testVar5,testVar6);
 }
-
-///////////////////////////
-// logging to console
-//////////////////////////
-
-// pass in header.display arguments, spit them out.
-console.log(header.display("Kurt", "Leadley", "Assignement 3-2"));
-console.log("\n");
-console.log("// Output from the match{} function...")
-console.log(match("A","B"));
-console.log(match(2,2));
-console.log("\n");
-console.log("// output from the if...else blocks");

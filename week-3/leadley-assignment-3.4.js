@@ -1,11 +1,11 @@
 /*
-============================================
+==============================================
 ; Title:  leadley-exercise-3.3.js
 ; Author: Kurt Leadley
 ; Date:   16 June 2019
 ; Description: Creates a loop that generates a random number between 1 and 10.
 ; An if statement with some matching functions is used to test to see if it equals myWantedNumber
-=============================================
+==============================================
 */
 
 // call and display my header file

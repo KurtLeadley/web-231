@@ -6,6 +6,11 @@
 ; Description: Learning the forEach iteration for arrays
 */
 // let's make a JSON thingy with my favorite musicians
+// call my header file
+var header = require('../leadley-header.js');
+// console.log header string
+console.log(header.display("Kurt", "Leadley", "Exercise 5-3"));
+console.log('');
 var myComposers = [
   {
     firstName:"Geddy",

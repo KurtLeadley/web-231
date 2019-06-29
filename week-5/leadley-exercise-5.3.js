@@ -5,7 +5,7 @@
 ; Date:   29 June 2019
 ; Description: Learning the forEach iteration for arrays
 */
-
+// let's make a JSON thingy with my favorite musicians
 var myComposers = [
   {
     firstName:"Geddy",
@@ -38,6 +38,7 @@ var myComposers = [
     rating:"9",
   },
 ];
+// okay, let's loop through my JSON by passing the object into this forEach function method thing.
 myComposers.forEach(function(myComposers) {
   // log it!
   console.log(myComposers.firstName + " " + myComposers.lastName + " | Genre: " + myComposers.genre + " | My Rating: " + myComposers.rating);

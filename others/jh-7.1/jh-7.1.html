@@ -1,0 +1,75 @@
+<!--
+; ============================================
+; Title:  hughes-7.1.html
+; Author: Joshua Hughes
+; Modified By: Kurt Leadley
+; Date:   9 July 2019
+; Description: Demonstrates JS in web browsers
+;     and all 3 methods for including JS in a browser
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hughes-7.1</title>
+
+  <!--1. shows external JS inclusion style  -->
+<script src="hughes-7.1-scripts.js"></script>
+</head>
+<body>
+  <h1>Using JS and DOM elements</h1>
+<div style="border: .2em solid; width: 400px; margin: 100px; padding:10px;">
+  <br>
+  <label for="fullName"> Name: </label>
+  <input type="hidden" id="firstName" disabled>
+  <input type="hidden" id="lastName" disabled>
+  <input type="text" id="fullName" disabled>
+  <button style="float: right" id="nameButton">Get Name</button>
+  <br>
+  <br>
+
+  <script>
+    /*
+    2. shows internal JS inclusion method
+    ;  note: this can be anywhere on the same page
+    */
+    var getName = function(){
+      var firstNamePrompt = prompt("Please enter your first name");
+      // getElementById, not Elements. This function returns one value, not an array -kl
+      document.getElementById('firstName').value= firstNamePrompt;//hint
+      var lastNamePrompt = prompt("Please enter your last name");
+      document.getElementById('lastName').value= lastNamePrompt;
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var fullName = firstName + " " + lastName;
+      // getElementById, not Elements. This function returns one value, not an array -kl
+      var fullNameInput = document.getElementById('fullName');
+      fullNameInput.value = fullName;
+    }
+    nameButton.onclick = getName;
+  </script>
+
+  <label for="assignment">Assignment: </label>
+  <input type="text" id="assignment" disabled>
+
+  <!--3. shows inline JS inclusion method -->
+  <!-- Document D needs to be lowercase, otherwise it isn't a built in function -kl-->
+  <button style="float: right" onclick="
+    document.getElementById('assignment').value='Exercise 7.1';//hint
+    ">Get Assignment
+  </button>
+
+  <br>
+  <br>
+  <label for="dateInput">Date: </label>
+  <input type="text" id="dateInput" disabled>
+  <button style="float: right" onclick="fillDate();">Get Date</button>
+  <br>
+  <br>
+</div>
+</body>
+
+</html>

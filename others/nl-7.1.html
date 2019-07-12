@@ -1,0 +1,44 @@
+
+<!-- Title: Discussion Board 7.1
+Author: Nathaniel D. Liebhart
+Modified by: Kurt Leadley
+Date: July 11th, 2019
+Description: This is a program that contains two errors -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1">
+    <h1 class="heading" id="first-heading">This is the first Heading</h1>
+    <h2 class="heading" id="second-heading">This is the second Heading</h2>
+  </div>
+  <!-- opened up script tags -->
+  <script>
+    // changed to getElementById, there is only one h1 tag, no need to get an array of h1 elements
+    // using getElementsByTagName -kl
+    let one = document.getElementById("first-heading");
+    // had to remove the s in getElementById, this function only returns one element -kl
+    let two = document.getElementById("second-heading");
+    // removed the (), color and background color are not methods. I think they are in JQuery though -kl
+    one.style.color = "blue";
+    two.style.backgroundColor = 'blue';
+
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is added on");
+
+    para.appendChild(node);
+
+    var e = document.getElementById("div1");
+
+    e.appendChild(para);
+    // not sure where you want to put what here -kl
+    //e.insertBefore(para, child);
+  </script>
+</body>
+</html>

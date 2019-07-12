@@ -1,0 +1,164 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>DB KL 7.1- Tic Tac Toe</title>
+      <style>
+        h1 {
+          color:#354;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: repeat(3,33%);
+          grid-template-rows: 1fr 1fr;
+          grid-column-gap: 5px;
+          grid-row-gap: 5px;
+          background-color: azure;
+        }
+        .item {
+          justify-self: center;
+          padding:1em;
+          margin:1em;
+          background-color: gray;
+        }
+        #item-title {
+          grid-column: 1 / span 3;
+          justify-self: center;
+          align-self: center;
+        }
+      </style>
+  </head>
+  <body>
+      <div class='container'>
+          <div id='item-title'>
+            <h1>Tic Tac Toe!</h1>
+          </div>
+          <div id='item-1' class='item' onclick='toggleText(this);getLetters();vertical(letterArray);horizontal(letterArray);diagonal(letterArray);'>
+            <p></p>
+          </div>
+          <div id='item-2' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-3' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-4' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-5' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-6' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-7' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-8' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+          <div id='item-9' class='item' onclick='toggleText(this);getLetters();vertical(this);horizontal(this);diagonal(this);'>
+            <p></p>
+          </div>
+      </div>
+    <script>
+        function getLetters() {
+          var letterArray = [];
+          for (var i = 1; i < document.getElementsByClassName('item').length+1; i++) {
+            var letter = document.getElementById('item-'+ i).textContent;
+            // this was surprisingly very necessary to use trim here
+            letter = letter.trim();
+            letterArray.push(letter);
+          }
+          console.log(letterArray);
+          return letterArray;
+        }
+        function horizontal(letterArray) {
+          // horizontal tests
+          var i = 1;
+          var k = 0;
+          for (var j = 0; j < 3; j++) {
+            if ((letterArray[k]==letterArray[k+1]) && (letterArray[k] == letterArray[k+2]) && (letterArray[k] !='')) {
+                  document.getElementById("item-"+i).style.backgroundColor = 'green';
+                  i++;
+                  document.getElementById("item-"+i).style.backgroundColor = 'green';
+                  i++;
+                  document.getElementById("item-"+i).style.backgroundColor = 'green';
+                  i++;
+            } else {
+                  document.getElementById("item-"+i).style.backgroundColor = 'gray';
+                  i++;
+                  document.getElementById("item-"+i).style.backgroundColor = 'gray';
+                  i++;
+                  document.getElementById("item-"+i).style.backgroundColor = 'gray';
+            }
+            k = k+3;
+          }
+        }
+        function vertical(letterArray) {
+          //vertical tests
+          var k = 0;
+          var colStarters = [1,2,3];
+          for (var j = 0; j < 3; j++) {
+            var itemNum = colStarters[j];
+            if ((letterArray[k]==letterArray[k+3]) && (letterArray[k] == letterArray[k+6]) && (letterArray[k] !='')) {
+                  document.getElementById("item-" + itemNum).style.backgroundColor = 'green';
+                  itemNum = itemNum + 3;
+                  document.getElementById("item-" + itemNum).style.backgroundColor = 'green';
+                  itemNum = itemNum + 3;
+                  document.getElementById("item-" + itemNum).style.backgroundColor = 'green';
+            } else {
+                  document.getElementById("item-" + itemNum).style.backgroundColor = 'gray';
+                  i++;
+                  document.getElementById("item-" + itemNum).style.backgroundColor = 'gray';
+                  i++;
+                  document.getElementById("item-" + itemNum).style.backgroundColor = 'gray';
+            }
+            k = k + 1;
+          }
+        }
+        function diagonal(letterArray) {
+          // diagonal tests
+          if ((letterArray[0]==letterArray[4]) && (letterArray[0] == letterArray[8]) && (letterArray[0] !='')) {
+                document.getElementById("item-1").style.backgroundColor = 'green';
+                document.getElementById("item-5").style.backgroundColor = 'green';
+                document.getElementById("item-9").style.backgroundColor = 'green';
+          } else {
+              document.getElementById("item-1").style.backgroundColor = 'gray';
+              document.getElementById("item-5").style.backgroundColor = 'gray';
+              document.getElementById("item-9").style.backgroundColor = 'gray';
+          }
+          if ((letterArray[6]==letterArray[4]) && (letterArray[6] == letterArray[2]) && (letterArray[6] !='')) {
+                document.getElementById("item-7").style.backgroundColor = 'green';
+                document.getElementById("item-5").style.backgroundColor = 'green';
+                document.getElementById("item-3").style.backgroundColor = 'green';
+          } else {
+              document.getElementById("item-7").style.backgroundColor = 'gray';
+              document.getElementById("item-5").style.backgroundColor = 'gray';
+              document.getElementById("item-3").style.backgroundColor = 'gray';
+          }
+        }
+        function toggleText(element) {
+          // function to toggleText between X and O
+          var id = element.id;
+          var text = document.getElementById(id).innerText;
+          if (text == 'X') {
+            document.getElementById(id).innerText = 'O';
+          }
+          if (text == 'O') {
+            document.getElementById(id).innerText = '';
+          }
+          if (text == '') {
+            document.getElementById(id).innerText = 'X';
+          }
+        }
+        // todo: get this function to work
+        function runAll() {
+          toggleText(this);
+          getLetters();
+          horizontal(letterArray);
+          vertical(letterArray);
+          diagonal(letterArray);
+        }
+    </script>
+  </body>
+</html>

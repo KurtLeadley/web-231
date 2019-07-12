@@ -1,0 +1,84 @@
+<!----
+============================================
+; Title: DB 7.1
+; Author: Kurt Leadley
+; Date: 7/11/2019
+; Modified By: No one yet.
+; Description: The 9 gray divs should be able to toggle between X and O on click
+; There are 3 errors. One of the errors occurs 9 times
+;===========================================
+-->
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>DB KL 7.1- Tic Tac Toe</title>
+      <style>
+        h1 {
+          color:#354;
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(3,33%);
+          grid-template-rows: 1fr 1fr;
+          grid-column-gap: 5px;
+          grid-row-gap: 5px;
+          background-color: #8BA7A9;
+        }
+        .item {
+          justify-self: center;
+          padding:1em;
+          margin:1em;
+          background-color: gray;
+          height:20px;
+          width:20px;
+        }
+        #title {
+          margin:auto;
+        }
+      </style>
+  </head>
+  <body>
+      <h1>Tic Tac Toe!</h1>
+      <p><i>Click on the boxes to select X or O</i></p>
+      <!--Create the 9 grid boxes for the game-->
+      <div class='grid'>
+          <div id='item-1' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-2' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-3' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-4' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-5' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-6' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-7' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-8' class='item' onclick='toggleText();'>
+          </div>
+          <div id='item-9' class='item' onclick='toggleText()'>
+          </div>
+      </div>
+    <script>
+        // this is the onclick function invoked above
+        function toggleText() {
+          // get the passed in element's id
+          var id = element.id;
+          // get the text contents of the div
+          var text = document.getElementById(id).innerText();
+          // toggle between X O and nothing
+          if (text == 'X') {
+            document.getElementById(id).innerText = 'O';
+          }
+          if (text == 'O') {
+            document.getElementById(id).innerText = '';
+          }
+          if (text == '') {
+            document.getElementById(id).innerText = 'X';
+          }
+        }
+    </script>
+  </body>
+</html>

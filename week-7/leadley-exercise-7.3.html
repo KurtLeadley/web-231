@@ -13,7 +13,32 @@
 </head>
 <body>
 
-<div id="list"></div>
+<div id="list">
+  <script>
+    document.write('<h2>SHOPPING LIST v.1</h2>')
+    document.write('<ol>');
+    document.write('<li>bluefish spread & watercress toast</li>');
+    document.write('<li>free-range lamb drippings & eggplant discs</li>');
+    document.write('<li>locally-sourced farfalle & encrusted pork belly panini</li>');
+    document.write('<li>crafted sunflower reduction with bison</li>');
+    document.write('<li>Toilet Paper</li>');
+    document.write('</ol>');
+  </script>
+</div>
+<div id ="list2">
+  <script>
+    document.getElementById('list2').innerHTML = ''+
+    '<h2>SHOPPING LIST v.2' +
+    '<table>' +
+      '<thead><tr><th>Id</th><th>Item</th><tr></thead>' +
+      '<tr><td>1</td><td>bluefish spread & watercress toast</td></tr>' +
+      '<tr><td>2</td><td>free-range lamb drippings & eggplant discs</td></tr>' +
+      '<tr><td>3</td><td>locally-sourced farfalle & encrusted pork belly panini</td></tr>' +
+      '<tr><td>4</td><td>crafted sunflower reduction with bison</td></tr>' +
+      '<tr><td>5</td><td>Toilet Paper</td></tr>' +
+    '</table>';
+  </script>
+</div>
 
 </body>
 </html>

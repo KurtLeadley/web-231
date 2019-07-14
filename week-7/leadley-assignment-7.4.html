@@ -1,0 +1,66 @@
+<!-- 
+; Title:  leadley-assignment-7.4.html
+; Author: Kurt Leadley
+; Date:   14 July 2019
+; Description: Inline js working with html tables
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 7.4</title>
+  <link rel="stylesheet" href="../site.css">
+  <script>
+    // create a function that will be used to construct employee objects
+    function Product(id,name,amount) {
+        this.id = id;
+        this.name = name;
+        this.amount = amount;
+    }
+    // create an array that constructs 5 product objects
+    var productArray = [
+        new Product(1,'Laptop',799.99),
+        new Product(2,'Motherboard',59.99),
+        new Product(3,'Monitor',174.99),
+        new Product(4,'Mouse',13.99),
+        new Product(5,'Keyboard',14.50)
+    ];
+  </script>
+</head>
+<body>
+    <h2>Computer Components</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th colspan="2">Function</th>
+            </tr>
+        </thead>
+        <script>
+            // for each item in the product array, call it an product, pass it in and....
+            productArray.forEach(function(product) {
+            // then get the properties of each product object
+            var id = product.id
+            var name = product.name;
+            var amount = product.amount;
+            document.write('<tr>');
+                document.write('<td>'+id+'</td>');
+                document.write('<td>'+name+'</td>');
+                document.write('<td>'+amount+'</td>');
+                // doing inline alerts with variables and strings was getting tough, so I made functions
+                document.write('<td><a href="#" onclick="editProduct('+id+');">Edit</a></td>');
+                document.write('<td><a href="#" onclick="deleteProduct();">Delete</a></td>');
+            document.write('</tr>');
+            });
+            function editProduct(id) {
+                alert(id);
+            }
+            function deleteProduct() {
+                confirm("Are you sure?");
+            }
+        </script>
+    </table>
+</body>
+</html>

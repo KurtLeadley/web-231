@@ -1,0 +1,55 @@
+<!--
+============================================
+; Title: DB 8.1
+; Author: Kurt Leadley
+; Date: 7/15/2019
+; Modified By: No one yet.
+; Description:
+;===========================================
+-->
+<html>
+  <head>
+    <title>Move and Style Divs</title>
+    <style>
+      div {
+        width:25%;
+      }
+    </style>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.div-para').click(function() {
+          $(this).css({"background-color":"#6D93CF", "font-weight":"bold"});
+        });
+        $("#div1").click(function() {
+          $('#div1 .div-para').text('You just styled Div 1')
+        });
+        $("#div2").click(function() {
+          $('#div2 .div-para').text('You just styled Div 2');
+        });
+        $("#div3").click(function() {
+          $(this).detach().insertAfter('#div2');
+          $('#div3 .div-para').text('You just moved Div 3 to its proper place');
+        });
+        $(".divA").click(function() {
+          $(this).detach();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Display Div 1,2,3 in order and with the blue styling</h2>
+    <div id ="div1">
+      <p class='div-para'>Div 1</p>
+    </div>
+    <div id ="div3">
+      <p class='div-para'>Div 3</p>
+    </div>
+    <div id ="div2">
+      <p class="div-para">Div 2</p>
+    </div>
+    <div class = "divA">
+      <p class="div-para">This Div doesn't belong, hide or detach me</p>
+    </div>
+  </body>
+</html>

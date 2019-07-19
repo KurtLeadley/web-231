@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      // replaced the $ with function. This is the standard where to ready a document for jQuery
+      $(document).ready(function() {
+        $("button").click(function() {
+          // need : not = to give the property a value for animate
+          $("div").animate({ left : "250px" });
+        });
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Start</button>
+    <div style="background:#98bf21;height:100px;width:100px;position:absolute;margin-top:50px;"></div>
+  </body>
+</html>

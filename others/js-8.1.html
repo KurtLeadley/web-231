@@ -1,0 +1,53 @@
+<!--
+============================================
+; Title: Assignment 8.1
+; Author: Justin Singleton
+; Modified By: Kurt Leadley
+; Date: 18 July 2019
+; Description: This program demonstrates the
+; use of DOM manipulation with jQuery and has
+; two mistakes.
+;===========================================
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 8.1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      // A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you
+      // https://learn.jquery.com/using-jquery-core/document-ready/
+      $( document ).ready(function() {
+        // jquery click functions using id and class selectors
+        $('#jq1').click(function(){
+          alert("Hello, There: jQuery id click ");
+          // in your original code, you were missing a closing bracket for the function and a closing parenthesis for the jQuery selector.
+          // every opening parenthesis and bracket needs a matching close.
+        });
+        $('.jq2').click(function() {
+          alert("Hi Friends: jQuery class click");
+        });
+      // close of document.ready function
+      });
+    </script>
+  </head>
+  <body>
+      <h1>Click the button for a message.</h1>
+      <button onclick="alertMessage()">Press Here</button>
+      <button onclick="alertMessage1()">Press Here also</button>
+      <button id='jq1'>Press Here jq1</button>
+      <button class='jq2'>Press Here also jq2</button>
+  </body>
+  <script>
+    // vanilla javascript functions with onclick. These don't work inside the jQuery document.ready by the way
+    // check out https://stackoverflow.com/questions/12627443/jquery-click-vs-onclick
+    // if you were to try to put these two functions up top with the others, this helps explain why it won't work:
+    // https://stackoverflow.com/questions/38051376/onclick-function-is-not-defined
+    function alertMessage() {
+      alert("Hello, There");
+    };
+    function alertMessage1() {
+      alert("Hi Friends");
+    };
+  </script>
+</html>

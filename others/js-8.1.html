@@ -16,14 +16,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
       // A page can't be manipulated safely until the document is "ready." jQuery detects this state of readiness for you
+      // read me:
       // https://learn.jquery.com/using-jquery-core/document-ready/
       $( document ).ready(function() {
         // jquery click functions using id and class selectors
+        // this one selects by id (#)
         $('#jq1').click(function(){
           alert("Hello, There: jQuery id click ");
           // in your original code, you were missing a closing bracket for the function and a closing parenthesis for the jQuery selector.
           // every opening parenthesis and bracket needs a matching close.
         });
+        // this one selects by class (.)
         $('.jq2').click(function() {
           alert("Hi Friends: jQuery class click");
         });

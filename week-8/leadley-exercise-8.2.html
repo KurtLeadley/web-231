@@ -1,0 +1,79 @@
+<!--
+; Title:  leadley-exercise-8.2.html
+; Author: Kurt Leadley
+; Date:   19 July 2019
+; Description: dynamic html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+    #fruits {
+      display: grid;
+      grid-template-columns: 100%;
+      margin-top:20px;
+    }
+    .ul-class {
+      justify-self: center;
+      margin:0;
+    }
+    #top-bar {
+      background-color: #456325;
+    }
+    h3 {
+      text-align: center;
+      color:white;
+      padding:20px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Make two empty divs to get filled with stuff later on-->
+  <div id='top-bar'></div>
+  <div id="fruits"></div>
+  <script>
+    // define an array of fruits
+    var fruitsArray = [
+      {
+        id: 1,
+        fruitName:"Raspberry",
+      },
+      {
+        id:2,
+        fruitName:"Blueberry",
+      },
+      {
+        id: 3,
+        fruitName:"Kiwi",
+      },
+      {
+        id: 4,
+        fruitName:"Cantaloupe",
+      },
+      {
+        id: 5,
+        fruitName:"Orange",
+      },
+    ];
+    var outPutList = "<ul class='ul-class'>";
+    // loop through my array of key-val paris
+    fruitsArray.forEach(function(fruit) {
+      // make some li tags with the fruits inside
+      outPutList += "<li class='li-class'> Id: " + fruit.id +" | Type: "+fruit.fruitName + "</li>";
+    });
+    // once the loop is complete, close the unordered list
+    outPutList += "</ul>";
+    // add the html to the elements by id
+    document.getElementById('fruits').innerHTML = outPutList;
+    document.getElementById('top-bar').innerHTML = '<h3>Fruits</h3>';
+  </script>
+
+  </body>
+</html>

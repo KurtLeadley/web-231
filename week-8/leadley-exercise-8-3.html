@@ -1,0 +1,86 @@
+<!--
+; Title:  leadley-exercise-8.3.html
+; Author: Kurt Leadley
+; Date:   22 July 2019
+; Description: jQuery
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Exercise 8.3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- you will need to the href to point to your root directories css file -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../site.css">
+  </head>
+  <body>
+    <div id='top-bar'>
+      <h2>Title</h2>
+    </div>
+    <!--Make a grid so both items can be 20px from the topbar
+    grid is handled in site.css-->
+    <div id ='grid'>
+      <div class='grid-item'>
+        <p id='lorem-para'>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <button type="button" id='toggle-button'>Toggle</button>
+      </div>
+      <div class='grid-item'>
+        <h3>Click an ID to alert the fruit's info</h3>
+        <table>
+          <thead>
+            <th>ID</th>
+            <th>Type</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class='fruit-id'>1</td>
+              <td>Raspberry</td>
+            </tr>
+            <tr>
+              <td class='fruit-id'>2</td>
+              <td>Blueberry</td>
+            </tr>
+            <tr>
+              <td class='fruit-id'>3</td>
+              <td>Kiwi</td>
+            </tr>
+            <tr>
+              <td class='fruit-id'>4</td>
+              <td>Cantaloupe</td>
+            </tr>
+            <tr>
+              <td class='fruit-id''>5</td>
+              <td>Orange</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script type="text/javascript">
+      // get the document ready for jquery
+      $( document ).ready(function() {
+        // select button by id and start a click function
+        $('#toggle-button').click(function() {
+          // select the paragraph by id and apply toggle function
+          $('#lorem-para').toggle();
+        });
+        // select fruit id by class and start a click function
+        $('.fruit-id').click(function() {
+          // get whatever the text of the clicked id td is
+          var id = $(this).text();
+          // get the text of the sibling td
+          var fruit = $(this).siblings('td').text();
+          // alert the information
+          alert('ID: '+ id +' | Type: ' + fruit);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -7,6 +7,28 @@
 ;===========================================
 */
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+#top-bar {
+  background-color: steelblue;
+}
+#grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top:20px;
+  grid-column-gap: 10px;
+}
+.grid-item {
+  /* justify-self: center; */
+  margin-left:20px;
+}
+h2 {
+  text-align: center;
+  color:white;
+  padding:20px;
+  letter-spacing: 2px;
+}
 table {
   border-collapse: collapse;
 }

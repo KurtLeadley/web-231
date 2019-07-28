@@ -47,3 +47,10 @@ th {
 tr:nth-child(even) {
   background-color: lightsteelblue;
 }
+tr td:first-of-type:hover {
+  color: red;
+}
+.hover-class {
+  color:red;
+  font-style: italic;
+}
